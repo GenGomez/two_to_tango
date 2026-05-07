@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu0qe4jegqx6w"
-path="res://.godot/imported/back_to_menu2.png-bba4db50f46459334b95159f9f2de491.ctex"
+uid="uid://j8hthjmeuow3"
+path="res://.godot/imported/Fons.png-fea766e4f3d474e706c242b5678a3c98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ui/back_to_menu_button/back_to_menu2.png"
-dest_files=["res://.godot/imported/back_to_menu2.png-bba4db50f46459334b95159f9f2de491.ctex"]
+source_file="res://Sprites/game/road/Fons.png"
+dest_files=["res://.godot/imported/Fons.png-fea766e4f3d474e706c242b5678a3c98.ctex"]
 
 [params]
 
