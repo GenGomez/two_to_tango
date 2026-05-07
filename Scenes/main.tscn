@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cjswfnhvqffft"]
+
+[ext_resource type="Script" uid="uid://di1r7g310yd4c" path="res://Scenes/main.gd" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://copxapx4chtrv" path="res://Sprites/game/road/road.png" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://y5ryyyqmrq20" path="res://Prefabs/key_listener.tscn" id="2_8gbba"]
+
+[node name="Main" type="Node2D" unique_id=1270706695]
+script = ExtResource("1_8gbba")
+
+[node name="Player1" type="Sprite2D" parent="." unique_id=296407379]
+texture = ExtResource("1_bo1nx")
+centered = false
+
+[node name="KeyListenerLeft" parent="Player1" unique_id=1679916959 instance=ExtResource("2_8gbba")]
+position = Vector2(20, 162)
+key_name = "button_left"
+
+[node name="KeyListenerUp" parent="Player1" unique_id=376453681 instance=ExtResource("2_8gbba")]
+position = Vector2(60, 162)
+rotation = 1.5707964
+key_name = "button_up"
+
+[node name="KeyListenerRight" parent="Player1" unique_id=956852461 instance=ExtResource("2_8gbba")]
+position = Vector2(101, 162)
+rotation = -3.1415925
+key_name = "button_right"
+
+[node name="Player2" type="Sprite2D" parent="." unique_id=1093481242]
+position = Vector2(200, 0)
+texture = ExtResource("1_bo1nx")
+centered = false
+
+[node name="KeyListenerLeft" parent="Player2" unique_id=1092033188 instance=ExtResource("2_8gbba")]
+position = Vector2(20, 162)
+key_name = "button_left"
+
+[node name="KeyListenerUp" parent="Player2" unique_id=1714893625 instance=ExtResource("2_8gbba")]
+position = Vector2(60, 162)
+rotation = 1.5707964
+key_name = "button_up"
+
+[node name="KeyListenerRight" parent="Player2" unique_id=293868015 instance=ExtResource("2_8gbba")]
+position = Vector2(101, 162)
+rotation = -3.1415925
+key_name = "button_right"
