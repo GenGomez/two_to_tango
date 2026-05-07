@@ -1,19 +1,13 @@
 [gd_scene format=3 uid="uid://c0wa5ck7v2ouh"]
 
-[ext_resource type="Texture2D" uid="uid://cv573hx1fdppb" path="res://icon.svg" id="1_77nlu"]
-[ext_resource type="Script" uid="uid://b4wucb6qlwf45" path="res://Prefabs/arrow.gd" id="1_c7yig"]
+[ext_resource type="Texture2D" uid="uid://bo7o7tm7t3erq" path="res://Sprites/game/arrow_button/left/arrow_button_left3.png" id="1_77nlu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_77nlu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7yig"]
 
-[node name="Arrow" type="Node2D" unique_id=1960806545]
-script = ExtResource("1_c7yig")
+[node name="Arrow" type="StaticBody2D" unique_id=135074611]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=20712928]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1773833194]
+shape = SubResource("CircleShape2D_c7yig")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=762926909]
 texture = ExtResource("1_77nlu")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1105527548]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=130081388]
-scale = Vector2(6, 6)
-shape = SubResource("CircleShape2D_77nlu")
-debug_color = Color(0.94437945, 7.2196126e-06, 0.5995998, 0.41960785)
