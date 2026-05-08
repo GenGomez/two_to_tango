@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dp55l6u2cqdm2"]
+
+[ext_resource type="SpriteFrames" uid="uid://dh5fcc3cqvsq1" path="res://Animations/arrow_up_frames.tres" id="1_adaw7"]
+[ext_resource type="Script" uid="uid://blsd00cqifdfd" path="res://Scripts/ArrowButton.gd" id="2_nndfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adaw7"]
+resource_local_to_scene = true
+size = Vector2(8, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0isc"]
+resource_local_to_scene = true
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nndfn"]
+resource_local_to_scene = true
+size = Vector2(8, 24)
+
+[node name="ArrowButton" type="AnimatedSprite2D" unique_id=515251283]
+sprite_frames = ExtResource("1_adaw7")
+script = ExtResource("2_nndfn")
+
+[node name="PerfectArea" type="Area2D" parent="." unique_id=1455453031]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerfectArea" unique_id=1961000925]
+shape = SubResource("RectangleShape2D_adaw7")
+
+[node name="GoodArea" type="Area2D" parent="." unique_id=1846137684]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea" unique_id=1550655507]
+shape = SubResource("RectangleShape2D_k0isc")
+
+[node name="OkayArea" type="Area2D" parent="." unique_id=19959578]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OkayArea" unique_id=1081608665]
+shape = SubResource("RectangleShape2D_nndfn")
+
+[node name="PushTimer" type="Timer" parent="." unique_id=840611236]
+wait_time = 0.05
+
+[connection signal="area_entered" from="PerfectArea" to="." method="_on_PerfectArea_area_entered"]
+[connection signal="area_exited" from="PerfectArea" to="." method="_on_PerfectArea_area_exited"]
+[connection signal="area_entered" from="GoodArea" to="." method="_on_GoodArea_area_entered"]
+[connection signal="area_exited" from="GoodArea" to="." method="_on_GoodArea_area_exited"]
+[connection signal="area_entered" from="OkayArea" to="." method="_on_OkayArea_area_entered"]
+[connection signal="area_exited" from="OkayArea" to="." method="_on_OkayArea_area_exited"]
+[connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]

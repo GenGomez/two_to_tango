@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://y5ryyyqmrq20"]
 
 [ext_resource type="Texture2D" uid="uid://cfxbopw5yfisa" path="res://Sprites/game/arrow_button/left/arrow_button_left1.png" id="1_nuyn7"]
-[ext_resource type="Script" uid="uid://d2voumgl4g7hn" path="res://Prefabs/key_listener.gd" id="2_5ok3w"]
+[ext_resource type="Script" uid="uid://d2voumgl4g7hn" path="res://Scripts/key_listener.gd" id="2_5ok3w"]
 
 [node name="KeyListener" type="Sprite2D" unique_id=1679916959]
 texture = ExtResource("1_nuyn7")
