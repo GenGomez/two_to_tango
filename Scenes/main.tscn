@@ -4,33 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://copxapx4chtrv" path="res://Sprites/game/road/road.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://y5ryyyqmrq20" path="res://Prefabs/key_listener.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dp55l6u2cqdm2" path="res://Prefabs/ArrowButton.tscn" id="3_6bp64"]
-[ext_resource type="Script" uid="uid://be6t47culpy55" path="res://Scripts/player.gd" id="3_ynf5e"]
 [ext_resource type="SpriteFrames" uid="uid://bc161yqykmbak" path="res://Animations/arrow_left_frames.tres" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://cwrq0c3s72fif" path="res://Prefabs/Conductor.tscn" id="4_jjvhh"]
 [ext_resource type="SpriteFrames" uid="uid://ry4rl58k4nl5" path="res://Animations/arrow_right_frames.tres" id="5_ynf5e"]
 [ext_resource type="AudioStream" uid="uid://273impgarsbv" path="res://Musica/Tango32mp3.mp3" id="8_344ge"]
 
-[node name="Main" type="Node2D" unique_id=1270706695]
+[node name="Node2D" type="Node2D" unique_id=1270706695]
 script = ExtResource("1_8gbba")
 
 [node name="Player1" type="Sprite2D" parent="." unique_id=296407379]
 texture = ExtResource("1_bo1nx")
 centered = false
-script = ExtResource("3_ynf5e")
-
-[node name="ArrowButtonUp" parent="Player1" unique_id=515251283 instance=ExtResource("3_6bp64")]
-position = Vector2(60, 162)
-input = "button_up"
-
-[node name="ArrowButtonLeft" parent="Player1" unique_id=1142514815 instance=ExtResource("3_6bp64")]
-position = Vector2(20, 162)
-sprite_frames = ExtResource("4_344ge")
-input = "button_left"
-
-[node name="ArrowButtonRight" parent="Player1" unique_id=1662007664 instance=ExtResource("3_6bp64")]
-position = Vector2(101, 162)
-sprite_frames = ExtResource("5_ynf5e")
-input = "button_right"
 
 [node name="Player2" type="Sprite2D" parent="." unique_id=1093481242]
 visible = false
@@ -38,20 +22,34 @@ position = Vector2(200, 0)
 texture = ExtResource("1_bo1nx")
 centered = false
 
-[node name="KeyListenerLeft" parent="Player2" unique_id=1092033188 instance=ExtResource("2_8gbba")]
-position = Vector2(20, 162)
-key_name = "button_left"
-
-[node name="KeyListenerUp" parent="Player2" unique_id=1714893625 instance=ExtResource("2_8gbba")]
-position = Vector2(60, 162)
-rotation = 1.5707964
-key_name = "button_up"
-
-[node name="KeyListenerRight" parent="Player2" unique_id=293868015 instance=ExtResource("2_8gbba")]
-position = Vector2(101, 162)
-rotation = -3.1415925
-key_name = "button_right"
-
 [node name="Conductor" parent="." unique_id=1732400208 instance=ExtResource("4_jjvhh")]
 stream = ExtResource("8_344ge")
 bpm = 128
+
+[node name="P2up" parent="." unique_id=1092033188 instance=ExtResource("2_8gbba")]
+position = Vector2(220, 162)
+key_name = "button_left"
+
+[node name="P2right" parent="." unique_id=293868015 instance=ExtResource("2_8gbba")]
+position = Vector2(301, 162)
+rotation = -3.1415925
+key_name = "button_right"
+
+[node name="P2left" parent="." unique_id=1714893625 instance=ExtResource("2_8gbba")]
+position = Vector2(260, 162)
+rotation = 1.5707964
+key_name = "button_up"
+
+[node name="P1up" parent="." unique_id=515251283 instance=ExtResource("3_6bp64")]
+position = Vector2(60, 162)
+input = "button_up"
+
+[node name="P1left" parent="." unique_id=1142514815 instance=ExtResource("3_6bp64")]
+position = Vector2(20, 162)
+sprite_frames = ExtResource("4_344ge")
+input = "button_left"
+
+[node name="P1right" parent="." unique_id=1662007664 instance=ExtResource("3_6bp64")]
+position = Vector2(101, 162)
+sprite_frames = ExtResource("5_ynf5e")
+input = "button_right"
