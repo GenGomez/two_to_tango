@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		position.y += speed * delta
 		if position.y > 200:
 			queue_free()
-			get_parent().reset_combo()
+			get_parent().increment_score(0)
 	else:
 		$Node2D.position.y -= speed * delta
 		

@@ -1,15 +1,5 @@
 extends Node2D
 
-func _input(event):
-	if event.is_action_pressed("esc"):
-		get_tree().quit()
-
-
-func _ready() -> void:
-	randomize()
-	$Conductor.play_with_beat_offset(8)
-
-
 var score = 0
 var combo = 0
 
@@ -35,6 +25,19 @@ var lane = 0
 var rand = 0
 var note = preload("res://Prefabs/Note.tscn")
 
+
+func _input(event):
+	if event.is_action_pressed("esc"):
+		get_tree().quit()
+
+
+func _ready() -> void:
+	randomize()
+	$Conductor.play_with_beat_offset(8)
+	$Meter.value = $Meter.max_value + 8
+
+
+
 func _on_Conductor_measure(position):
 	if position == 1:
 		_spawn_notes(spawn_1_beat)
@@ -47,7 +50,9 @@ func _on_Conductor_measure(position):
 
 func _on_Conductor_beat(position):
 	song_position_in_beats = position
-	if song_position_in_beats > 36:
+	if song_position_in_beats > 8:
+		$Meter.value -= 1
+	if song_position_in_beats > 50:
 		spawn_1_beat = 1
 		spawn_2_beat = 1
 		spawn_3_beat = 1
@@ -139,8 +144,10 @@ func _spawn_notes(to_spawn):
 func increment_score(by):
 	if by > 0:
 		combo += 1
+		$Meter.value += by;
 	else:
 		combo = 0
+		$Meter.value -= 5;
 	
 	if by == 3:
 		great += 1
@@ -160,8 +167,3 @@ func increment_score(by):
 			max_combo = combo
 	else:
 		$Combo.text = ""
-
-
-func reset_combo():
-	combo = 0
-	$Combo.text = ""
