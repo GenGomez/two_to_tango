@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://copxapx4chtrv" path="res://Sprites/game/road/road.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://y5ryyyqmrq20" path="res://Prefabs/key_listener.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dp55l6u2cqdm2" path="res://Prefabs/ArrowButton.tscn" id="3_6bp64"]
+[ext_resource type="Script" uid="uid://be6t47culpy55" path="res://Scripts/player.gd" id="3_ynf5e"]
 [ext_resource type="SpriteFrames" uid="uid://bc161yqykmbak" path="res://Animations/arrow_left_frames.tres" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://cwrq0c3s72fif" path="res://Prefabs/Conductor.tscn" id="4_jjvhh"]
 [ext_resource type="SpriteFrames" uid="uid://ry4rl58k4nl5" path="res://Animations/arrow_right_frames.tres" id="5_ynf5e"]
@@ -15,6 +16,7 @@ script = ExtResource("1_8gbba")
 [node name="Player1" type="Sprite2D" parent="." unique_id=296407379]
 texture = ExtResource("1_bo1nx")
 centered = false
+script = ExtResource("3_ynf5e")
 
 [node name="ArrowButtonUp" parent="Player1" unique_id=515251283 instance=ExtResource("3_6bp64")]
 position = Vector2(60, 162)
