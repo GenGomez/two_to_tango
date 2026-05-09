@@ -52,3 +52,4 @@ key_name = "button_right"
 
 [node name="Conductor" parent="." unique_id=1732400208 instance=ExtResource("4_jjvhh")]
 stream = ExtResource("8_344ge")
+bpm = 128
