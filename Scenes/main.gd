@@ -33,8 +33,7 @@ var spawn_4_beat = 0
 
 var lane = 0
 var rand = 0
-var note = load("res://Scenes/Note.tscn")
-var instance
+var note = preload("res://Prefabs/Note.tscn")
 
 func _on_Conductor_measure(position):
 	if position == 1:
@@ -103,31 +102,37 @@ func _on_Conductor_beat(position):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats > 404:
-		Global.set_score(score)
-		Global.combo = max_combo
-		Global.great = great
-		Global.good = good
-		Global.okay = okay
-		Global.missed = missed
-		if get_tree().change_scene("res://Scenes/End.tscn") != OK:
-			print ("Error changing scene to End")
+	#if song_position_in_beats > 404:
+		#Global.set_score(score)
+		#Global.combo = max_combo
+		#Global.great = great
+		#Global.good = good
+		#Global.okay = okay
+		#Global.missed = missed
+		#if get_tree().change_scene("res://Scenes/End.tscn") != OK:
+			#print ("Error changing scene to End")
 
 
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
 		lane = randi() % 3
-		instance = note.instance()
-		instance.initialize(lane)
-		add_child(instance)
+		var instanceP1 = note.instantiate()
+		instanceP1.initialize(lane, 0)
+		add_child(instanceP1)
+		var instanceP2 = note.instantiate()
+		instanceP2.initialize(lane, 1)
+		add_child(instanceP2)
 	if to_spawn > 1:
 		while rand == lane:
 			rand = randi() % 3
 		lane = rand
-		instance = note.instance()
-		instance.initialize(lane)
-		add_child(instance)
+		var instanceP1 = note.instantiate()
+		instanceP1.initialize(lane, 0)
+		add_child(instanceP1)
+		var instanceP2 = note.instantiate()
+		instanceP2.initialize(lane, 1)
+		add_child(instanceP2)
 		
 
 

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://di1r7g310yd4c" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="Texture2D" uid="uid://copxapx4chtrv" path="res://Sprites/game/road/road.png" id="1_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://y5ryyyqmrq20" path="res://Prefabs/key_listener.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dp55l6u2cqdm2" path="res://Prefabs/ArrowButton.tscn" id="3_6bp64"]
 [ext_resource type="SpriteFrames" uid="uid://bc161yqykmbak" path="res://Animations/arrow_left_frames.tres" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://cwrq0c3s72fif" path="res://Prefabs/Conductor.tscn" id="4_jjvhh"]
@@ -13,12 +12,12 @@
 script = ExtResource("1_8gbba")
 
 [node name="Player1" type="Sprite2D" parent="." unique_id=296407379]
+position = Vector2(6, 0)
 texture = ExtResource("1_bo1nx")
 centered = false
 
 [node name="Player2" type="Sprite2D" parent="." unique_id=1093481242]
-visible = false
-position = Vector2(200, 0)
+position = Vector2(194, 0)
 texture = ExtResource("1_bo1nx")
 centered = false
 
@@ -26,30 +25,45 @@ centered = false
 stream = ExtResource("8_344ge")
 bpm = 128
 
-[node name="P2up" parent="." unique_id=1092033188 instance=ExtResource("2_8gbba")]
-position = Vector2(220, 162)
-key_name = "button_left"
-
-[node name="P2right" parent="." unique_id=293868015 instance=ExtResource("2_8gbba")]
-position = Vector2(301, 162)
-rotation = -3.1415925
-key_name = "button_right"
-
-[node name="P2left" parent="." unique_id=1714893625 instance=ExtResource("2_8gbba")]
-position = Vector2(260, 162)
-rotation = 1.5707964
-key_name = "button_up"
-
 [node name="P1up" parent="." unique_id=515251283 instance=ExtResource("3_6bp64")]
-position = Vector2(60, 162)
-input = "button_up"
+position = Vector2(66, 162)
+input = "button_up_p1"
 
 [node name="P1left" parent="." unique_id=1142514815 instance=ExtResource("3_6bp64")]
-position = Vector2(20, 162)
+position = Vector2(26, 162)
 sprite_frames = ExtResource("4_344ge")
-input = "button_left"
+input = "button_left_p1"
 
 [node name="P1right" parent="." unique_id=1662007664 instance=ExtResource("3_6bp64")]
-position = Vector2(101, 162)
+position = Vector2(107, 162)
 sprite_frames = ExtResource("5_ynf5e")
-input = "button_right"
+input = "button_right_p1"
+
+[node name="P2up" parent="." unique_id=891921636 instance=ExtResource("3_6bp64")]
+position = Vector2(254, 162)
+input = "button_up_p2"
+
+[node name="P2left" parent="." unique_id=1210952877 instance=ExtResource("3_6bp64")]
+position = Vector2(214, 162)
+sprite_frames = ExtResource("4_344ge")
+input = "button_left_p2"
+
+[node name="P2right" parent="." unique_id=673790682 instance=ExtResource("3_6bp64")]
+position = Vector2(295, 162)
+sprite_frames = ExtResource("5_ynf5e")
+input = "button_right_p2"
+
+[node name="Label" type="Label" parent="." unique_id=1765745546]
+offset_left = 140.0
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 27.0
+
+[node name="Combo" type="Label" parent="." unique_id=1979640776]
+offset_left = 142.0
+offset_top = 40.0
+offset_right = 182.0
+offset_bottom = 63.0
+
+[connection signal="SignalBeat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="SignalMeasure" from="Conductor" to="." method="_on_Conductor_measure"]
