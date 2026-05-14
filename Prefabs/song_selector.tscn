@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b52ta45a73oho"]
+
+[ext_resource type="Script" uid="uid://6fiehmjgcra6" path="res://Scripts/song_selector.gd" id="1_w36t2"]
+
+[sub_resource type="SystemFont" id="SystemFont_1rerr"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
+content_margin_left = 10.0
+content_margin_top = 0.0
+content_margin_right = 15.0
+content_margin_bottom = 0.0
+bg_color = Color(0.5372549, 0.08235294, 0.08627451, 1)
+corner_radius_top_left = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[node name="songSelector" type="Button" unique_id=543482746]
+theme_override_fonts/font = SubResource("SystemFont_1rerr")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_158mb")
+script = ExtResource("1_w36t2")
