@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://2am71aoisx8j"]
+
+[ext_resource type="Texture2D" uid="uid://c06ndy3x7on4t" path="res://Sprites/game/road/VXEij0ZF (1).webp" id="1_yv2jb"]
+
+[node name="VxEij0zf(1)" type="Sprite2D" unique_id=1447908388]
+position = Vector2(160.04074, 96.62499)
+scale = Vector2(0.12537768, 0.13385415)
+texture = ExtResource("1_yv2jb")
