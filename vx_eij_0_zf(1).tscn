@@ -1,8 +1,55 @@
 [gd_scene format=3 uid="uid://2am71aoisx8j"]
 
 [ext_resource type="Texture2D" uid="uid://c06ndy3x7on4t" path="res://Sprites/game/road/VXEij0ZF (1).webp" id="1_yv2jb"]
+[ext_resource type="Texture2D" uid="uid://dkw5nnpgo0tgf" path="res://Sprites/game/arrow_button/arrow_button_vermella.png" id="2_lldd8"]
+[ext_resource type="Texture2D" uid="uid://bn87y3unifpka" path="res://Sprites/game/arrow_button/arrow_button_negre.png" id="3_vldri"]
+[ext_resource type="Texture2D" uid="uid://d3g3ic7tvqqx" path="res://Sprites/game/arrow_button/Arrow_black_2.png" id="4_1a0ao"]
+[ext_resource type="Texture2D" uid="uid://cpqonq5mfymp4" path="res://Sprites/game/arrow_button/Arrow_Black_3.png" id="5_2jrqb"]
+[ext_resource type="Texture2D" uid="uid://d3t4polbvedsb" path="res://Sprites/game/arrow_button/Arrow_Black_4.png" id="6_no0vo"]
+[ext_resource type="Texture2D" uid="uid://b8o8lklym5et7" path="res://Sprites/game/arrow_button/Arrow_black_5.png" id="7_5icna"]
+[ext_resource type="Texture2D" uid="uid://dphdbwebes3up" path="res://Sprites/game/arrow_button/Arrow_black_6.png" id="8_lvl7n"]
+[ext_resource type="Texture2D" uid="uid://bdgj8xo60b77g" path="res://Sprites/game/arrow_button/Arrow_black_7.png" id="9_cjeap"]
 
-[node name="VxEij0zf(1)" type="Sprite2D" unique_id=1447908388]
-position = Vector2(160.04074, 96.62499)
-scale = Vector2(0.12537768, 0.13385415)
+[node name="VxEij0zf(1)" type="Sprite2D" unique_id=2077526213]
+position = Vector2(-64, 91)
 texture = ExtResource("1_yv2jb")
+
+[node name="ArrowButtonVermella" type="Sprite2D" parent="." unique_id=1373624719]
+position = Vector2(781, 243)
+scale = Vector2(14.25, 14.25)
+texture = ExtResource("2_lldd8")
+
+[node name="ArrowButtonNegre" type="Sprite2D" parent="." unique_id=2029021168]
+position = Vector2(-754, 286.00003)
+scale = Vector2(15.791667, 15.791667)
+texture = ExtResource("3_vldri")
+
+[node name="ArrowBlack2" type="Sprite2D" parent="." unique_id=2100974794]
+position = Vector2(-652, -144.99998)
+scale = Vector2(12.291667, 12.291667)
+texture = ExtResource("4_1a0ao")
+
+[node name="ArrowBlack3" type="Sprite2D" parent="." unique_id=283551091]
+position = Vector2(-956, 2)
+scale = Vector2(16.5, 16.5)
+texture = ExtResource("5_2jrqb")
+
+[node name="ArrowBlack4" type="Sprite2D" parent="." unique_id=76935420]
+position = Vector2(-314.5, 376.5)
+scale = Vector2(18.625, 18.625)
+texture = ExtResource("6_no0vo")
+
+[node name="ArrowBlack5" type="Sprite2D" parent="." unique_id=1336369486]
+position = Vector2(-898, -432)
+scale = Vector2(19, 19)
+texture = ExtResource("7_5icna")
+
+[node name="ArrowBlack6" type="Sprite2D" parent="." unique_id=130334665]
+position = Vector2(-335, -44)
+scale = Vector2(15.75, 15.75)
+texture = ExtResource("8_lvl7n")
+
+[node name="ArrowBlack7" type="Sprite2D" parent="." unique_id=1408218683]
+position = Vector2(-437.00003, -559)
+scale = Vector2(18.416666, 18.416666)
+texture = ExtResource("9_cjeap")
