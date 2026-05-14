@@ -52,72 +52,72 @@ func _on_Conductor_beat(position):
 	song_position_in_beats = position
 	if song_position_in_beats > 8:
 		$Meter.value -= 1
-	if song_position_in_beats > 50:
-		spawn_1_beat = 1
-		spawn_2_beat = 1
-		spawn_3_beat = 1
-		spawn_4_beat = 1
-	if song_position_in_beats > 98:
-		spawn_1_beat = 2
-		spawn_2_beat = 0
-		spawn_3_beat = 1
-		spawn_4_beat = 0
-	if song_position_in_beats > 132:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
-		spawn_3_beat = 0
-		spawn_4_beat = 2
-	if song_position_in_beats > 162:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 1
-	if song_position_in_beats > 194:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
-	if song_position_in_beats > 228:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
-	if song_position_in_beats > 258:
-		spawn_1_beat = 1
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
-	if song_position_in_beats > 288:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
-		spawn_3_beat = 0
-		spawn_4_beat = 2
-	if song_position_in_beats > 322:
-		spawn_1_beat = 3
-		spawn_2_beat = 2
-		spawn_3_beat = 2
-		spawn_4_beat = 1
-	if song_position_in_beats > 388:
+		if $Meter.value <= 0:
+			_goEnd(false)
+	if song_position_in_beats > 20:
 		spawn_1_beat = 1
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats > 396:
-		spawn_1_beat = 0
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	#if song_position_in_beats > 404:
-		#Global.set_score(score)
-		#Global.combo = max_combo
-		#Global.great = great
-		#Global.good = good
-		#Global.okay = okay
-		#Global.missed = missed
-		#if get_tree().change_scene("res://Scenes/End.tscn") != OK:
-			#print ("Error changing scene to End")
+	#if song_position_in_beats > 98:
+		#spawn_1_beat = 2
+		#spawn_2_beat = 0
+		#spawn_3_beat = 1
+		#spawn_4_beat = 0
+	#if song_position_in_beats > 132:
+		#spawn_1_beat = 0
+		#spawn_2_beat = 2
+		#spawn_3_beat = 0
+		#spawn_4_beat = 2
+	#if song_position_in_beats > 162:
+		#spawn_1_beat = 2
+		#spawn_2_beat = 2
+		#spawn_3_beat = 1
+		#spawn_4_beat = 1
+	#if song_position_in_beats > 194:
+		#spawn_1_beat = 2
+		#spawn_2_beat = 2
+		#spawn_3_beat = 1
+		#spawn_4_beat = 2
+	#if song_position_in_beats > 228:
+		#spawn_1_beat = 0
+		#spawn_2_beat = 2
+		#spawn_3_beat = 1
+		#spawn_4_beat = 2
+	#if song_position_in_beats > 258:
+		#spawn_1_beat = 1
+		#spawn_2_beat = 2
+		#spawn_3_beat = 1
+		#spawn_4_beat = 2
+	#if song_position_in_beats > 288:
+		#spawn_1_beat = 0
+		#spawn_2_beat = 2
+		#spawn_3_beat = 0
+		#spawn_4_beat = 2
+	#if song_position_in_beats > 322:
+		#spawn_1_beat = 3
+		#spawn_2_beat = 2
+		#spawn_3_beat = 2
+		#spawn_4_beat = 1
+	#if song_position_in_beats > 388:
+		#spawn_1_beat = 1
+		#spawn_2_beat = 0
+		#spawn_3_beat = 0
+		#spawn_4_beat = 0
+	if song_position_in_beats > 30: #394:
+		_goEnd(true)
 
 
+func _goEnd(victory):
+	Global.score = score
+	Global.combo = max_combo
+	Global.great = great
+	Global.good = good
+	Global.okay = okay
+	Global.missed = missed
+	Global.victory = victory
+	if get_tree().change_scene_to_file("res://Scenes/End.tscn") != OK:
+		print ("Error changing scene to End")
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:

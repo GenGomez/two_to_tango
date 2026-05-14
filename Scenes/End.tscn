@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dfgxbw6v3f0ni"]
+
+[ext_resource type="Script" uid="uid://d012q3jjnq10f" path="res://Scenes/end.gd" id="1_pw64i"]
+[ext_resource type="Texture2D" uid="uid://j8hthjmeuow3" path="res://Sprites/game/road/Fons.png" id="2_67ibq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_67ibq"]
+font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_70j8v"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_03b8h"]
+font_size = 25
+
+[node name="End" type="Node2D" unique_id=992513615]
+script = ExtResource("1_pw64i")
+metadata/_edit_vertical_guides_ = [6.0]
+
+[node name="Fons" type="Sprite2D" parent="." unique_id=263285602]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_67ibq")
+centered = false
+
+[node name="Victory" type="Label" parent="." unique_id=1617082513]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 156.0
+offset_bottom = 32.0
+text = "You Lose"
+label_settings = SubResource("LabelSettings_67ibq")
+
+[node name="NoteCount" type="Label" parent="." unique_id=221323030]
+offset_left = 7.0
+offset_top = 41.0
+offset_right = 149.0
+offset_bottom = 110.0
+text = "Missed: 0
+Okay: 0
+Good: 0
+Great: 1000"
+
+[node name="Combo" type="Label" parent="." unique_id=1456431526]
+offset_left = 165.0
+offset_top = 3.0
+offset_right = 315.0
+offset_bottom = 33.0
+text = "Max combo:"
+label_settings = SubResource("LabelSettings_70j8v")
+
+[node name="MaxCombo" type="Label" parent="." unique_id=1500123024]
+offset_left = 165.0
+offset_top = 32.0
+offset_right = 307.0
+offset_bottom = 55.0
+text = "100000"
+label_settings = SubResource("LabelSettings_03b8h")
+
+[node name="Score" type="Label" parent="." unique_id=633886300]
+offset_left = 164.0
+offset_top = 68.0
+offset_right = 314.0
+offset_bottom = 98.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_70j8v")
+
+[node name="FinalScore" type="Label" parent="." unique_id=1063609697]
+offset_left = 164.0
+offset_top = 97.0
+offset_right = 306.0
+offset_bottom = 120.0
+text = "100000"
+label_settings = SubResource("LabelSettings_03b8h")
