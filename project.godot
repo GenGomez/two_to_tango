@@ -15,6 +15,10 @@ run/main_scene="uid://cjswfnhvqffft"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://cgts53yb1du2k"
+
 [display]
 
 window/size/viewport_width=320
@@ -22,6 +26,10 @@ window/size/viewport_height=180
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="uid://cbre5q2aqkvbh"
 
 [input]
 

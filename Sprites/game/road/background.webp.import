@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c06ndy3x7on4t"
-path="res://.godot/imported/VXEij0ZF (1).webp-e89a58bfd690b733527a1981f4f7842a.ctex"
+path="res://.godot/imported/background.webp-660bab5143223113437f455d175ce344.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/game/road/VXEij0ZF (1).webp"
-dest_files=["res://.godot/imported/VXEij0ZF (1).webp-e89a58bfd690b733527a1981f4f7842a.ctex"]
+source_file="res://Sprites/game/road/background.webp"
+dest_files=["res://.godot/imported/background.webp-660bab5143223113437f455d175ce344.ctex"]
 
 [params]
 
