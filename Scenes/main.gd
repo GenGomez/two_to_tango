@@ -33,8 +33,8 @@ func _input(event):
 
 func _ready() -> void:
 	randomize()
-	#$Conductor.play_with_beat_offset(8)
-	$Conductor.play_from_beat(360,0)
+	$Conductor.play_with_beat_offset(8)
+	#$Conductor.play_from_beat(360,0)
 	$Meter.value = $Meter.max_value + 8
 
 
