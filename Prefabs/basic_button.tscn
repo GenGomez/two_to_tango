@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dpyalqbl5q7ro"]
+
+[sub_resource type="SystemFont" id="SystemFont_1rerr"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwsa2"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xaxod"]
+bg_color = Color(0.26293245, 0.26293245, 0.26293245, 0.8627451)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ds6x"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 0.8627451)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[node name="BasicButton" type="Button" unique_id=1512243221]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_1rerr")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_wwsa2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xaxod")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4ds6x")
