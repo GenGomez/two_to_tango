@@ -1,8 +1,8 @@
 extends Button
 
-@export var song_path: String
+@export var song: AudioStream
+@export var player: AudioStreamPlayer
 
 func _pressed():
-	var stream = load(song_path)
-	get_parent().get_node("AudioStreamPlayer").stream = stream
-	get_parent().get_node("AudioStreamPlayer").play()
+	player.stream = song
+	player.play()

@@ -3,23 +3,22 @@
 [ext_resource type="Script" uid="uid://bj3r20thgmyip" path="res://Scenes/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://j8hthjmeuow3" path="res://Sprites/game/road/Fons.png" id="2_xhh6f"]
 [ext_resource type="PackedScene" uid="uid://b52ta45a73oho" path="res://Prefabs/song_selector.tscn" id="3_cayip"]
-
-[sub_resource type="SystemFont" id="SystemFont_1rerr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhh6f"]
-bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-expand_margin_left = 5.0
-expand_margin_top = 1.0
-expand_margin_right = 5.0
-expand_margin_bottom = 1.0
+[ext_resource type="PackedScene" uid="uid://dpyalqbl5q7ro" path="res://Prefabs/basic_button.tscn" id="3_jsrd8"]
+[ext_resource type="AudioStream" uid="uid://273impgarsbv" path="res://Musica/Tango32mp3.mp3" id="4_wwsa2"]
+[ext_resource type="AudioStream" uid="uid://cxf0063s57ndb" path="res://Musica/TangoDificil.mp3" id="5_jsrd8"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_wwsa2"]
 
 [sub_resource type="SystemFont" id="SystemFont_cayip"]
+
+[sub_resource type="SystemFont" id="SystemFont_1rerr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
+bg_color = Color(0.9471994, 0.9471994, 0.9471994, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Menu" type="Node2D" unique_id=1331148639]
 script = ExtResource("1_1rerr")
@@ -37,25 +36,16 @@ offset_bottom = 180.0
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Start" type="Button" parent="basicButtons/VBoxContainer" unique_id=87571546]
+[node name="Start" parent="basicButtons/VBoxContainer" unique_id=1512243221 instance=ExtResource("3_jsrd8")]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_1rerr")
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 text = "Start"
 
-[node name="Settings" type="Button" parent="basicButtons/VBoxContainer" unique_id=445750059]
+[node name="Settings" parent="basicButtons/VBoxContainer" unique_id=1947664936 instance=ExtResource("3_jsrd8")]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_1rerr")
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 text = "Settings"
 
-[node name="Quit" type="Button" parent="basicButtons/VBoxContainer" unique_id=701849847]
+[node name="Quit" parent="basicButtons/VBoxContainer" unique_id=1027823357 instance=ExtResource("3_jsrd8")]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_1rerr")
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
 text = "Quit"
 
 [node name="songSelectorButtons" type="CenterContainer" parent="." unique_id=346448907]
@@ -81,39 +71,64 @@ size_flags_vertical = 4
 theme_override_constants/separation = 15
 alignment = 2
 
-[node name="songSelector" parent="songSelectorButtons/VBoxContainer" unique_id=543482746 instance=ExtResource("3_cayip")]
+[node name="songSelector" parent="songSelectorButtons/VBoxContainer" unique_id=543482746 node_paths=PackedStringArray("player") instance=ExtResource("3_cayip")]
 layout_mode = 2
 text = "Tango 32"
-song_path = "res://Musica/Tango32mp3.mp3"
+song = ExtResource("4_wwsa2")
+player = NodePath("../../AudioStreamPlayer")
 
-[node name="songSelector2" parent="songSelectorButtons/VBoxContainer" unique_id=782196731 instance=ExtResource("3_cayip")]
+[node name="songSelector2" parent="songSelectorButtons/VBoxContainer" unique_id=1856759131 node_paths=PackedStringArray("player") instance=ExtResource("3_cayip")]
 layout_mode = 2
 text = "Tango Dificil"
-song_path = "res://Musica/TangoDificil.mp3"
+song = ExtResource("5_jsrd8")
+player = NodePath("../../AudioStreamPlayer")
 
-[node name="songSettingsButtons" type="CenterContainer" parent="." unique_id=47015103]
-offset_right = 320.0
-offset_bottom = 180.0
+[node name="songSettingsButtons" type="Panel" parent="." unique_id=1935404311]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 98.0
+offset_top = 60.0
+offset_right = 222.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="songSettingsButtons" unique_id=1675111854]
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="HBoxContainer" type="HBoxContainer" parent="songSettingsButtons/VBoxContainer" unique_id=1700898645]
-layout_mode = 2
-
-[node name="Volume" type="Label" parent="songSettingsButtons/VBoxContainer/HBoxContainer" unique_id=2094007177]
-layout_mode = 2
+[node name="Volume" type="Label" parent="songSettingsButtons" unique_id=2094007177]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 54.0
+offset_bottom = 30.0
 theme_override_fonts/font = SubResource("SystemFont_cayip")
 theme_override_font_sizes/font_size = 12
 text = "Volume"
 
-[node name="Back" type="Button" parent="songSettingsButtons/VBoxContainer" unique_id=1653255166]
-layout_mode = 2
+[node name="HSlider" type="HSlider" parent="songSettingsButtons" unique_id=529479237]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 11.0
+offset_right = 120.0
+offset_bottom = 27.0
+max_value = 1.0
+step = 0.001
+
+[node name="Back" type="Button" parent="songSettingsButtons" unique_id=1653255166]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 38.0
+offset_right = 82.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.10747949, 0.10747983, 0.107479595, 1)
 theme_override_fonts/font = SubResource("SystemFont_1rerr")
 theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_xhh6f")
-text = "Settings"
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+text = "Back"
 
 [connection signal="pressed" from="basicButtons/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="basicButtons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="basicButtons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="songSettingsButtons/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="songSettingsButtons/Back" to="." method="_on_back_pressed"]
