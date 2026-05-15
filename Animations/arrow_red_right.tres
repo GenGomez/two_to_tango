@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ddyqc4cxvv4uf"]
+
+[ext_resource type="Texture2D" uid="uid://chxdjow0rbra2" path="res://Sprites/game/arrow_button/red/right/arrow_red_right1.png" id="1_url7d"]
+[ext_resource type="Texture2D" uid="uid://buaw8ok2a2qvp" path="res://Sprites/game/arrow_button/red/right/arrow_red_right2.png" id="2_tfdct"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_url7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tfdct")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

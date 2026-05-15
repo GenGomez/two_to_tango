@@ -4,12 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://copxapx4chtrv" path="res://Sprites/game/road/road.png" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://c06ndy3x7on4t" path="res://Sprites/game/road/background.webp" id="2_hptm8"]
 [ext_resource type="PackedScene" uid="uid://dp55l6u2cqdm2" path="res://Prefabs/ArrowButton.tscn" id="3_6bp64"]
-[ext_resource type="SpriteFrames" uid="uid://bc161yqykmbak" path="res://Animations/arrow_left_frames.tres" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://cwrq0c3s72fif" path="res://Prefabs/Conductor.tscn" id="4_jjvhh"]
-[ext_resource type="SpriteFrames" uid="uid://ry4rl58k4nl5" path="res://Animations/arrow_right_frames.tres" id="5_ynf5e"]
+[ext_resource type="SpriteFrames" uid="uid://dwkujscwlvep3" path="res://Animations/arrow_black_up.tres" id="7_jkdf5"]
 [ext_resource type="AudioStream" uid="uid://273impgarsbv" path="res://Musica/Tango32mp3.mp3" id="8_344ge"]
+[ext_resource type="SpriteFrames" uid="uid://dyj4be2hpuqx4" path="res://Animations/arrow_black_left.tres" id="8_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://cdjuunyh3k862" path="res://Sprites/under.png" id="8_ynf5e"]
+[ext_resource type="FontFile" uid="uid://cbre5q2aqkvbh" path="res://Fonts/upheaval/upheavtt.ttf" id="9_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://c342q5c5cvr4h" path="res://Sprites/progress.png" id="9_hptm8"]
+[ext_resource type="SpriteFrames" uid="uid://dodl2ll2bia2d" path="res://Animations/arrow_black_right.tres" id="9_k12tt"]
+[ext_resource type="SpriteFrames" uid="uid://buro85siui0o1" path="res://Animations/arrow_red_left.tres" id="10_h1bgf"]
+[ext_resource type="SpriteFrames" uid="uid://ddyqc4cxvv4uf" path="res://Animations/arrow_red_right.tres" id="11_b3802"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6iyac"]
+font = ExtResource("9_d1ilt")
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fdnlq"]
+font = ExtResource("9_d1ilt")
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D" unique_id=1270706695]
 script = ExtResource("1_8gbba")
@@ -35,16 +51,17 @@ bpm = 128
 
 [node name="P1up" parent="." unique_id=515251283 instance=ExtResource("3_6bp64")]
 position = Vector2(66, 162)
+sprite_frames = ExtResource("7_jkdf5")
 input = "button_up_p1"
 
 [node name="P1left" parent="." unique_id=1142514815 instance=ExtResource("3_6bp64")]
 position = Vector2(26, 162)
-sprite_frames = ExtResource("4_344ge")
+sprite_frames = ExtResource("8_wsu2k")
 input = "button_left_p1"
 
 [node name="P1right" parent="." unique_id=1662007664 instance=ExtResource("3_6bp64")]
 position = Vector2(107, 162)
-sprite_frames = ExtResource("5_ynf5e")
+sprite_frames = ExtResource("9_k12tt")
 input = "button_right_p1"
 
 [node name="P2up" parent="." unique_id=891921636 instance=ExtResource("3_6bp64")]
@@ -53,25 +70,33 @@ input = "button_up_p2"
 
 [node name="P2left" parent="." unique_id=1210952877 instance=ExtResource("3_6bp64")]
 position = Vector2(214, 162)
-sprite_frames = ExtResource("4_344ge")
+sprite_frames = ExtResource("10_h1bgf")
 input = "button_left_p2"
 
 [node name="P2right" parent="." unique_id=673790682 instance=ExtResource("3_6bp64")]
 position = Vector2(295, 162)
-sprite_frames = ExtResource("5_ynf5e")
+sprite_frames = ExtResource("11_b3802")
 input = "button_right_p2"
 
 [node name="Label" type="Label" parent="." unique_id=1765745546]
-offset_left = 140.0
-offset_top = 4.0
-offset_right = 180.0
-offset_bottom = 27.0
+offset_left = 128.0
+offset_top = 30.0
+offset_right = 192.0
+offset_bottom = 58.0
+text = "Score: 10000"
+label_settings = SubResource("LabelSettings_6iyac")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Combo" type="Label" parent="." unique_id=1979640776]
-offset_left = 142.0
-offset_top = 40.0
-offset_right = 182.0
-offset_bottom = 63.0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 86.0
+text = "Combo!"
+label_settings = SubResource("LabelSettings_fdnlq")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Meter" type="TextureProgressBar" parent="." unique_id=746389145]
 offset_left = 128.0

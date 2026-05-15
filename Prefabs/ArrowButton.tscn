@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dp55l6u2cqdm2"]
 
-[ext_resource type="SpriteFrames" uid="uid://dh5fcc3cqvsq1" path="res://Animations/arrow_up_frames.tres" id="1_adaw7"]
+[ext_resource type="SpriteFrames" uid="uid://wu60l7mml7an" path="res://Animations/arrow_red_up.tres" id="1_nndfn"]
 [ext_resource type="Script" uid="uid://blsd00cqifdfd" path="res://Scripts/ArrowButton.gd" id="2_nndfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adaw7"]
@@ -16,7 +16,7 @@ resource_local_to_scene = true
 size = Vector2(8, 24)
 
 [node name="ArrowButton" type="AnimatedSprite2D" unique_id=515251283]
-sprite_frames = ExtResource("1_adaw7")
+sprite_frames = ExtResource("1_nndfn")
 script = ExtResource("2_nndfn")
 
 [node name="PerfectArea" type="Area2D" parent="." unique_id=1455453031]

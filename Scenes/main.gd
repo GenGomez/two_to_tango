@@ -33,7 +33,8 @@ func _input(event):
 
 func _ready() -> void:
 	randomize()
-	$Conductor.play_with_beat_offset(8)
+	#$Conductor.play_with_beat_offset(8)
+	$Conductor.play_from_beat(360,0)
 	$Meter.value = $Meter.max_value + 8
 
 
@@ -59,52 +60,52 @@ func _on_Conductor_beat(position):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	#if song_position_in_beats > 98:
-		#spawn_1_beat = 2
-		#spawn_2_beat = 0
-		#spawn_3_beat = 1
-		#spawn_4_beat = 0
-	#if song_position_in_beats > 132:
-		#spawn_1_beat = 0
-		#spawn_2_beat = 2
-		#spawn_3_beat = 0
-		#spawn_4_beat = 2
-	#if song_position_in_beats > 162:
-		#spawn_1_beat = 2
-		#spawn_2_beat = 2
-		#spawn_3_beat = 1
-		#spawn_4_beat = 1
-	#if song_position_in_beats > 194:
-		#spawn_1_beat = 2
-		#spawn_2_beat = 2
-		#spawn_3_beat = 1
-		#spawn_4_beat = 2
-	#if song_position_in_beats > 228:
-		#spawn_1_beat = 0
-		#spawn_2_beat = 2
-		#spawn_3_beat = 1
-		#spawn_4_beat = 2
-	#if song_position_in_beats > 258:
-		#spawn_1_beat = 1
-		#spawn_2_beat = 2
-		#spawn_3_beat = 1
-		#spawn_4_beat = 2
-	#if song_position_in_beats > 288:
-		#spawn_1_beat = 0
-		#spawn_2_beat = 2
-		#spawn_3_beat = 0
-		#spawn_4_beat = 2
-	#if song_position_in_beats > 322:
-		#spawn_1_beat = 3
-		#spawn_2_beat = 2
-		#spawn_3_beat = 2
-		#spawn_4_beat = 1
-	#if song_position_in_beats > 388:
-		#spawn_1_beat = 1
-		#spawn_2_beat = 0
-		#spawn_3_beat = 0
-		#spawn_4_beat = 0
-	if song_position_in_beats > 30: #394:
+	if song_position_in_beats > 98:
+		spawn_1_beat = 2
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+	if song_position_in_beats > 132:
+		spawn_1_beat = 0
+		spawn_2_beat = 2
+		spawn_3_beat = 0
+		spawn_4_beat = 2
+	if song_position_in_beats > 162:
+		spawn_1_beat = 2
+		spawn_2_beat = 2
+		spawn_3_beat = 1
+		spawn_4_beat = 1
+	if song_position_in_beats > 194:
+		spawn_1_beat = 2
+		spawn_2_beat = 2
+		spawn_3_beat = 1
+		spawn_4_beat = 2
+	if song_position_in_beats > 228:
+		spawn_1_beat = 0
+		spawn_2_beat = 2
+		spawn_3_beat = 1
+		spawn_4_beat = 2
+	if song_position_in_beats > 258:
+		spawn_1_beat = 1
+		spawn_2_beat = 2
+		spawn_3_beat = 1
+		spawn_4_beat = 2
+	if song_position_in_beats > 288:
+		spawn_1_beat = 0
+		spawn_2_beat = 2
+		spawn_3_beat = 0
+		spawn_4_beat = 2
+	if song_position_in_beats > 322:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 1
+		spawn_4_beat = 1
+	if song_position_in_beats > 388:
+		spawn_1_beat = 0
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 0
+	if song_position_in_beats > 399:
 		_goEnd(true)
 
 

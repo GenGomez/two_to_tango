@@ -1,35 +1,20 @@
 [gd_scene format=3 uid="uid://u17bx3bmua6x"]
 
 [ext_resource type="Script" uid="uid://ivblogyspnnw" path="res://Scripts/note.gd" id="1_6w4eq"]
-[ext_resource type="Texture2D" uid="uid://bu335gv65bm06" path="res://Sprites/game/arrow_button/left/arrow_button_left3.png" id="2_hlcth"]
-[ext_resource type="Texture2D" uid="uid://ccy8wvev8ehtr" path="res://Sprites/game/arrow_button/up/arrow_button_up3.png" id="3_fe2e8"]
-[ext_resource type="Texture2D" uid="uid://cm62n8c45f4go" path="res://Sprites/game/arrow_button/right/arrow_button_right3.png" id="4_our1t"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_1tsxv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_hlcth")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_fe2e8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_our1t")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://oowyhw8t661c" path="res://Animations/note_black.tres" id="2_cp8im"]
+[ext_resource type="Script" uid="uid://cu5uulg85fanv" path="res://Scripts/notelabel.gd" id="3_xve0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2r84"]
 size = Vector2(8, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cp8im"]
+font_size = 12
 
 [node name="Note" type="Area2D" unique_id=358414598 groups=["note"]]
 script = ExtResource("1_6w4eq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881607406]
-sprite_frames = SubResource("SpriteFrames_1tsxv")
+sprite_frames = ExtResource("2_cp8im")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=322284973]
 shape = SubResource("RectangleShape2D_d2r84")
@@ -39,7 +24,19 @@ shape = SubResource("RectangleShape2D_d2r84")
 [node name="Node2D" type="Node2D" parent="." unique_id=1355450998]
 
 [node name="Label" type="Label" parent="Node2D" unique_id=2071760832]
-offset_left = -20.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
 offset_top = -12.0
-offset_right = 20.0
+offset_right = 24.0
 offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+label_settings = SubResource("LabelSettings_cp8im")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_xve0v")

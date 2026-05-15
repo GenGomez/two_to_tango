@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://2am71aoisx8j"]
 
-[ext_resource type="Texture2D" uid="uid://c06ndy3x7on4t" path="res://Sprites/game/road/VXEij0ZF (1).webp" id="1_yv2jb"]
-[ext_resource type="Texture2D" uid="uid://dkw5nnpgo0tgf" path="res://Sprites/game/arrow_button/arrow_button_vermella.png" id="2_lldd8"]
-[ext_resource type="Texture2D" uid="uid://bn87y3unifpka" path="res://Sprites/game/arrow_button/arrow_button_negre.png" id="3_vldri"]
-[ext_resource type="Texture2D" uid="uid://d3g3ic7tvqqx" path="res://Sprites/game/arrow_button/Arrow_black_2.png" id="4_1a0ao"]
-[ext_resource type="Texture2D" uid="uid://cpqonq5mfymp4" path="res://Sprites/game/arrow_button/Arrow_Black_3.png" id="5_2jrqb"]
-[ext_resource type="Texture2D" uid="uid://d3t4polbvedsb" path="res://Sprites/game/arrow_button/Arrow_Black_4.png" id="6_no0vo"]
-[ext_resource type="Texture2D" uid="uid://b8o8lklym5et7" path="res://Sprites/game/arrow_button/Arrow_black_5.png" id="7_5icna"]
-[ext_resource type="Texture2D" uid="uid://dphdbwebes3up" path="res://Sprites/game/arrow_button/Arrow_black_6.png" id="8_lvl7n"]
-[ext_resource type="Texture2D" uid="uid://bdgj8xo60b77g" path="res://Sprites/game/arrow_button/Arrow_black_7.png" id="9_cjeap"]
+[ext_resource type="Texture2D" uid="uid://c06ndy3x7on4t" path="res://Sprites/game/road/background.webp" id="1_yv2jb"]
+[ext_resource type="Texture2D" uid="uid://dkw5nnpgo0tgf" path="res://Sprites/game/arrow_button/unused/arrow_button_vermella.png" id="2_lldd8"]
+[ext_resource type="Texture2D" uid="uid://bn87y3unifpka" path="res://Sprites/game/arrow_button/black/left/arrow_black_left1.png" id="3_vldri"]
+[ext_resource type="Texture2D" uid="uid://d3g3ic7tvqqx" path="res://Sprites/game/arrow_button/black/left/arrow_black_left2.png" id="4_1a0ao"]
+[ext_resource type="Texture2D" uid="uid://cpqonq5mfymp4" path="res://Sprites/game/arrow_button/unused/Arrow_Black_3.png" id="5_2jrqb"]
+[ext_resource type="Texture2D" uid="uid://d3t4polbvedsb" path="res://Sprites/game/arrow_button/unused/Arrow_Black_4.png" id="6_no0vo"]
+[ext_resource type="Texture2D" uid="uid://b8o8lklym5et7" path="res://Sprites/game/arrow_button/black/left/arrow_black_left3.png" id="7_5icna"]
+[ext_resource type="Texture2D" uid="uid://dphdbwebes3up" path="res://Sprites/game/arrow_button/unused/Arrow_black_6.png" id="8_lvl7n"]
+[ext_resource type="Texture2D" uid="uid://bdgj8xo60b77g" path="res://Sprites/game/arrow_button/unused/Arrow_black_7.png" id="9_cjeap"]
 
 [node name="VxEij0zf(1)" type="Sprite2D" unique_id=2077526213]
 position = Vector2(-64, 91)
