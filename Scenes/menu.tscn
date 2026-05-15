@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://s1mq8po0r2tl"]
+[gd_scene format=3 uid="uid://8odxfr32qg8t"]
 
-[ext_resource type="Script" uid="uid://bj3r20thgmyip" path="res://Scenes/menu.gd" id="1_1rerr"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://j8hthjmeuow3" path="res://Sprites/game/road/Fons.png" id="2_xhh6f"]
-[ext_resource type="PackedScene" uid="uid://b52ta45a73oho" path="res://Prefabs/song_selector.tscn" id="3_cayip"]
+[ext_resource type="PackedScene" path="res://Prefabs/song_selector.tscn" id="3_cayip"]
 
 [sub_resource type="SystemFont" id="SystemFont_1rerr"]
 
