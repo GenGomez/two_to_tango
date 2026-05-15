@@ -33,8 +33,8 @@ func _input(event):
 
 func _ready() -> void:
 	randomize()
-	$Conductor.play_with_beat_offset(8)
-	#$Conductor.play_from_beat(360,0)
+	#$Conductor.play_with_beat_offset(8)
+	$Conductor.play_from_beat(360,0)
 	$Meter.value = $Meter.max_value + 8
 
 
@@ -51,7 +51,7 @@ func _on_Conductor_measure(position):
 
 func _on_Conductor_beat(position):
 	song_position_in_beats = position
-	if song_position_in_beats > 8:
+	if song_position_in_beats > 8 and song_position_in_beats < 387:
 		$Meter.value -= 1
 		if $Meter.value <= 0:
 			_goEnd(false)

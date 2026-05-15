@@ -19,3 +19,11 @@ func _input(event):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
+
+
+func _on_main_menu_btn_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+
+
+func _on_play_again_btn_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")

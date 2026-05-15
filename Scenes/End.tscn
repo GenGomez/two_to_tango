@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d012q3jjnq10f" path="res://Scenes/end.gd" id="1_pw64i"]
 [ext_resource type="Texture2D" uid="uid://j8hthjmeuow3" path="res://Sprites/game/road/Fons.png" id="2_67ibq"]
+[ext_resource type="PackedScene" uid="uid://dpyalqbl5q7ro" path="res://Prefabs/basic_button.tscn" id="3_70j8v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_67ibq"]
 font_size = 33
@@ -11,6 +12,33 @@ font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_03b8h"]
 font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70j8v"]
+bg_color = Color(0.54, 0.08640002, 0.08640002, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03b8h"]
+bg_color = Color(0.7786704, 0.15054572, 0.14776471, 0.8627451)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8vyd"]
+bg_color = Color(0.54, 0.08640002, 0.08640002, 0.8627451)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
 
 [node name="End" type="Node2D" unique_id=992513615]
 script = ExtResource("1_pw64i")
@@ -23,16 +51,17 @@ centered = false
 [node name="Victory" type="Label" parent="." unique_id=1617082513]
 offset_left = 6.0
 offset_top = 2.0
-offset_right = 156.0
-offset_bottom = 32.0
+offset_right = 158.0
+offset_bottom = 34.0
 text = "You Lose"
 label_settings = SubResource("LabelSettings_67ibq")
+vertical_alignment = 2
 
 [node name="NoteCount" type="Label" parent="." unique_id=221323030]
-offset_left = 7.0
-offset_top = 41.0
-offset_right = 149.0
-offset_bottom = 110.0
+offset_left = 6.0
+offset_top = 50.0
+offset_right = 148.0
+offset_bottom = 119.0
 text = "Missed: 0
 Okay: 0
 Good: 0
@@ -45,6 +74,7 @@ offset_right = 315.0
 offset_bottom = 33.0
 text = "Max combo:"
 label_settings = SubResource("LabelSettings_70j8v")
+vertical_alignment = 2
 
 [node name="MaxCombo" type="Label" parent="." unique_id=1500123024]
 offset_left = 165.0
@@ -69,3 +99,25 @@ offset_right = 306.0
 offset_bottom = 120.0
 text = "100000"
 label_settings = SubResource("LabelSettings_03b8h")
+
+[node name="mainMenuBTN" parent="." unique_id=1512243221 instance=ExtResource("3_70j8v")]
+offset_left = 24.0
+offset_top = 140.0
+offset_right = 88.0
+offset_bottom = 151.0
+scale = Vector2(1.765, 1.765)
+text = "Main menu"
+
+[node name="playAgainBTN" parent="." unique_id=746439987 instance=ExtResource("3_70j8v")]
+offset_left = 178.0
+offset_top = 140.0
+offset_right = 248.0
+offset_bottom = 151.0
+scale = Vector2(1.765, 1.765)
+theme_override_styles/normal = SubResource("StyleBoxFlat_70j8v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_03b8h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x8vyd")
+text = "Play Again"
+
+[connection signal="pressed" from="mainMenuBTN" to="." method="_on_main_menu_btn_pressed"]
+[connection signal="pressed" from="playAgainBTN" to="." method="_on_play_again_btn_pressed"]
