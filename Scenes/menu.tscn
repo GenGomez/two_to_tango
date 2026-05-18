@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bj3r20thgmyip" path="res://Scenes/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://j8hthjmeuow3" path="res://Sprites/game/road/Fons.png" id="2_xhh6f"]
-[ext_resource type="PackedScene" uid="uid://b52ta45a73oho" path="res://Prefabs/song_selector.tscn" id="3_cayip"]
+[ext_resource type="PackedScene" path="res://Prefabs/song_selector.tscn" id="3_cayip"]
 [ext_resource type="PackedScene" uid="uid://dpyalqbl5q7ro" path="res://Prefabs/basic_button.tscn" id="3_jsrd8"]
 [ext_resource type="AudioStream" uid="uid://273impgarsbv" path="res://Musica/Tango32mp3.mp3" id="4_wwsa2"]
 [ext_resource type="AudioStream" uid="uid://cxf0063s57ndb" path="res://Musica/TangoDificil.mp3" id="5_jsrd8"]
@@ -83,13 +83,13 @@ alignment = 2
 
 [node name="songSelector" parent="songSelectorButtons/VBoxContainer" unique_id=543482746 node_paths=PackedStringArray("player") instance=ExtResource("3_cayip")]
 layout_mode = 2
-text = "Tango 32"
+text = "Pasión ardiente"
 song = ExtResource("4_wwsa2")
 player = NodePath("../../AudioStreamPlayer")
 
 [node name="songSelector2" parent="songSelectorButtons/VBoxContainer" unique_id=1856759131 node_paths=PackedStringArray("player") instance=ExtResource("3_cayip")]
 layout_mode = 2
-text = "Tango Dificil"
+text = "Corazón Salvaje"
 song = ExtResource("5_jsrd8")
 player = NodePath("../../AudioStreamPlayer")
 
