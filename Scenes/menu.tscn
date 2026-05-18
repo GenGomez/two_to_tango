@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://dpyalqbl5q7ro" path="res://Prefabs/basic_button.tscn" id="3_jsrd8"]
 [ext_resource type="AudioStream" uid="uid://273impgarsbv" path="res://Musica/Tango32mp3.mp3" id="4_wwsa2"]
 [ext_resource type="AudioStream" uid="uid://cxf0063s57ndb" path="res://Musica/TangoDificil.mp3" id="5_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://b8o8lklym5et7" path="res://Sprites/game/arrow_button/black/left/arrow_black_left3.png" id="7_g8i7c"]
+[ext_resource type="Texture2D" uid="uid://sm2o1tq3g62s" path="res://Sprites/game/arrow_button/black/up/arrow_black_up3.png" id="8_23t3j"]
+[ext_resource type="Texture2D" uid="uid://c8jfa8c1ax2vk" path="res://Sprites/game/arrow_button/black/right/arrow_black_right3.png" id="9_8ph6h"]
+[ext_resource type="Texture2D" uid="uid://bolb4x0pa1s21" path="res://Sprites/game/arrow_button/red/left/arrow_red_left3.png" id="10_5ti5v"]
+[ext_resource type="Texture2D" uid="uid://cffdssjvf62uq" path="res://Sprites/game/arrow_button/red/up/arrow_red_up3.png" id="11_1by5w"]
+[ext_resource type="Texture2D" uid="uid://ce2sel4kdmfjg" path="res://Sprites/game/arrow_button/red/right/arrow_red_right3.png" id="12_kmwmt"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_wwsa2"]
 
@@ -39,6 +45,10 @@ theme_override_constants/separation = 12
 [node name="Start" parent="basicButtons/VBoxContainer" unique_id=1512243221 instance=ExtResource("3_jsrd8")]
 layout_mode = 2
 text = "Start"
+
+[node name="HowToPlay" parent="basicButtons/VBoxContainer" unique_id=1667948426 instance=ExtResource("3_jsrd8")]
+layout_mode = 2
+text = "How to play"
 
 [node name="Settings" parent="basicButtons/VBoxContainer" unique_id=1947664936 instance=ExtResource("3_jsrd8")]
 layout_mode = 2
@@ -84,6 +94,7 @@ song = ExtResource("5_jsrd8")
 player = NodePath("../../AudioStreamPlayer")
 
 [node name="songSettingsButtons" type="Panel" parent="." unique_id=1935404311]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -115,7 +126,7 @@ offset_bottom = 27.0
 max_value = 1.0
 step = 0.001
 
-[node name="Back" type="Button" parent="songSettingsButtons" unique_id=1653255166]
+[node name="BackSettings" type="Button" parent="songSettingsButtons" unique_id=1653255166]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 38.0
@@ -127,10 +138,128 @@ theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
 text = "Back"
 
+[node name="howToPlay" type="Panel" parent="." unique_id=991188824]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = 35.0
+offset_right = 260.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player1" type="Label" parent="howToPlay" unique_id=1119673874]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.5
+offset_right = 92.0
+offset_bottom = 28.5
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Label" parent="howToPlay" unique_id=1077316599]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 27.5
+offset_right = 32.0
+offset_bottom = 51.5
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowBlackLeft3" type="Sprite2D" parent="howToPlay" unique_id=1248504792]
+position = Vector2(20, 68)
+texture = ExtResource("7_g8i7c")
+
+[node name="W" type="Label" parent="howToPlay" unique_id=234524352]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 27.5
+offset_right = 62.0
+offset_bottom = 51.5
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowBlackUp3" type="Sprite2D" parent="howToPlay" unique_id=424146593]
+position = Vector2(50, 68)
+texture = ExtResource("8_23t3j")
+
+[node name="D" type="Label" parent="howToPlay" unique_id=1686829804]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 27.5
+offset_right = 92.0
+offset_bottom = 51.5
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowBlackRight3" type="Sprite2D" parent="howToPlay" unique_id=1277867236]
+position = Vector2(80, 68)
+texture = ExtResource("9_8ph6h")
+
+[node name="Player2" type="Label" parent="howToPlay" unique_id=1239998288]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 4.5
+offset_right = 192.0
+offset_bottom = 28.5
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowKey" type="Label" parent="howToPlay" unique_id=141652090]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 27.5
+offset_right = 194.0
+offset_bottom = 51.5
+text = "Arrow keys"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowRedLeft3" type="Sprite2D" parent="howToPlay" unique_id=790510869]
+position = Vector2(120, 68)
+texture = ExtResource("10_5ti5v")
+
+[node name="ArrowRedUp3" type="Sprite2D" parent="howToPlay" unique_id=855701965]
+position = Vector2(150, 68)
+texture = ExtResource("11_1by5w")
+
+[node name="ArrowRedRight3" type="Sprite2D" parent="howToPlay" unique_id=830061566]
+position = Vector2(180, 68)
+texture = ExtResource("12_kmwmt")
+
+[node name="BackInstructions" type="Button" parent="howToPlay" unique_id=477321904]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = 33.0
+offset_right = 20.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.10747949, 0.10747983, 0.107479595, 1)
+theme_override_fonts/font = SubResource("SystemFont_1rerr")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
+text = "Back"
+
 [connection signal="pressed" from="basicButtons/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="basicButtons/VBoxContainer/HowToPlay" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="basicButtons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="basicButtons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="songSelectorButtons/VBoxContainer/songSelector" to="." method="_on_song_selector_pressed"]
 [connection signal="pressed" from="songSelectorButtons/VBoxContainer/songSelector2" to="." method="_on_song_selector_2_pressed"]
 [connection signal="value_changed" from="songSettingsButtons/HSlider" to="." method="_on_h_slider_value_changed"]
-[connection signal="pressed" from="songSettingsButtons/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="songSettingsButtons/BackSettings" to="." method="_on_back_settings_pressed"]
+[connection signal="pressed" from="howToPlay/BackInstructions" to="." method="_on_back_instructions_pressed"]
