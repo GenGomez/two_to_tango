@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var game_title: Label = $GameTitle
 @onready var start: Button = $basicButtons/VBoxContainer/Start
 @onready var basic_buttons: CenterContainer = $basicButtons
 @onready var song_selector_buttons: CenterContainer = $songSelectorButtons
@@ -9,6 +10,7 @@ extends Node2D
 var canYouStart: bool = false
 
 func _ready():
+	game_title.visible = true
 	start.disabled = true
 	basic_buttons.visible = true
 	song_selector_buttons.visible = true
@@ -28,16 +30,14 @@ func _on_start_pressed() -> void:
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 func _on_settings_pressed() -> void:
-	basic_buttons.visible = false
-	song_selector_buttons.visible = false
+	toggle_ui(false)
 	song_settings_buttons.visible = true
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func _on_back_settings_pressed() -> void:
-	basic_buttons.visible = true
-	song_selector_buttons.visible = true
+	toggle_ui(true)
 	song_settings_buttons.visible = false
 
 func _on_h_slider_value_changed(value: float) -> void:
@@ -56,12 +56,16 @@ func _on_song_selector_2_pressed() -> void:
 
 
 func _on_back_instructions_pressed() -> void:
-	basic_buttons.visible = true
-	song_selector_buttons.visible = true
+	toggle_ui(true)
 	how_to_play.visible = false
 
 
 func _on_how_to_play_pressed() -> void:
-	basic_buttons.visible = false
-	song_selector_buttons.visible = false
+	toggle_ui(false)
 	how_to_play.visible = true
+
+
+func toggle_ui(isVisible: bool) -> void:
+	game_title.visible = isVisible
+	basic_buttons.visible = isVisible
+	song_selector_buttons.visible = isVisible

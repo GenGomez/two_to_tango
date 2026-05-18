@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bj3r20thgmyip" path="res://Scenes/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://j8hthjmeuow3" path="res://Sprites/game/road/Fons.png" id="2_xhh6f"]
-[ext_resource type="PackedScene" path="res://Prefabs/song_selector.tscn" id="3_cayip"]
+[ext_resource type="PackedScene" uid="uid://b52ta45a73oho" path="res://Prefabs/song_selector.tscn" id="3_cayip"]
 [ext_resource type="PackedScene" uid="uid://dpyalqbl5q7ro" path="res://Prefabs/basic_button.tscn" id="3_jsrd8"]
 [ext_resource type="AudioStream" uid="uid://273impgarsbv" path="res://Musica/Tango32mp3.mp3" id="4_wwsa2"]
 [ext_resource type="AudioStream" uid="uid://cxf0063s57ndb" path="res://Musica/TangoDificil.mp3" id="5_jsrd8"]
@@ -35,7 +35,18 @@ scale = Vector2(0.125, 0.125)
 texture = ExtResource("2_xhh6f")
 centered = false
 
+[node name="GameTitle" type="Label" parent="." unique_id=174681945]
+offset_left = 1.0
+offset_top = 0.5625
+offset_right = 320.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 26
+text = "Takes Two To Tango  "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="basicButtons" type="CenterContainer" parent="." unique_id=400254932]
+offset_top = 32.0
 offset_right = 128.0
 offset_bottom = 180.0
 
@@ -65,7 +76,8 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 249.0
+offset_left = 189.0
+offset_top = 32.0
 offset_right = 320.0
 offset_bottom = 180.0
 grow_horizontal = 0
