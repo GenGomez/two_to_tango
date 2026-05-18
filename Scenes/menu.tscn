@@ -79,7 +79,7 @@ player = NodePath("../../AudioStreamPlayer")
 
 [node name="songSelector2" parent="songSelectorButtons/VBoxContainer" unique_id=1856759131 node_paths=PackedStringArray("player") instance=ExtResource("3_cayip")]
 layout_mode = 2
-text = "Corazón Salvaje"
+text = "Corazón Salvaje 🔒"
 song = ExtResource("5_jsrd8")
 player = NodePath("../../AudioStreamPlayer")
 
