@@ -4,6 +4,7 @@ extends Node2D
 @onready var basic_buttons: CenterContainer = $basicButtons
 @onready var song_selector_buttons: CenterContainer = $songSelectorButtons
 @onready var song_settings_buttons: Panel = $songSettingsButtons
+@onready var how_to_play: Panel = $howToPlay
 
 var canYouStart: bool = false
 
@@ -12,6 +13,7 @@ func _ready():
 	basic_buttons.visible = true
 	song_selector_buttons.visible = true
 	song_settings_buttons.visible = false
+	how_to_play.visible = false
 
 	var bus := AudioServer.get_bus_index("Master")
 	var db := AudioServer.get_bus_volume_db(bus)
@@ -33,7 +35,7 @@ func _on_settings_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
-func _on_back_pressed() -> void:
+func _on_back_settings_pressed() -> void:
 	basic_buttons.visible = true
 	song_selector_buttons.visible = true
 	song_settings_buttons.visible = false
@@ -51,3 +53,15 @@ func _on_song_selector_pressed() -> void:
 func _on_song_selector_2_pressed() -> void:
 	canYouStart = false
 	start.disabled = true
+
+
+func _on_back_instructions_pressed() -> void:
+	basic_buttons.visible = true
+	song_selector_buttons.visible = true
+	how_to_play.visible = false
+
+
+func _on_how_to_play_pressed() -> void:
+	basic_buttons.visible = false
+	song_selector_buttons.visible = false
+	how_to_play.visible = true
