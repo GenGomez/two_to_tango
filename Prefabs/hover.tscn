@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcq4d60jxja07"]
+
+[ext_resource type="AudioStream" uid="uid://c46pqkng1ueb5" path="res://Musica/hoversfx.mp3" id="1_3mhel"]
+
+[node name="Hover" type="AudioStreamPlayer" unique_id=1173788650]
+stream = ExtResource("1_3mhel")

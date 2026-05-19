@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://mw23ojbpmf5n"]
+
+[ext_resource type="AudioStream" uid="uid://gkuqscdl0vji" path="res://Musica/select_006.ogg" id="1_kaucw"]
+
+[node name="Click" type="AudioStreamPlayer" unique_id=40453516]
+stream = ExtResource("1_kaucw")

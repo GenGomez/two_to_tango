@@ -8,9 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://cxf0063s57ndb" path="res://Musica/TangoDificil.mp3" id="5_jsrd8"]
 [ext_resource type="Texture2D" uid="uid://b5380jn0qey3d" path="res://Sprites/lockicon.png" id="7_23t3j"]
 [ext_resource type="Texture2D" uid="uid://b8o8lklym5et7" path="res://Sprites/game/arrow_button/black/left/arrow_black_left3.png" id="7_g8i7c"]
+[ext_resource type="Script" uid="uid://cbburg3wxdixp" path="res://Scripts/basic_button.gd" id="8_8ph6h"]
 [ext_resource type="Texture2D" uid="uid://sm2o1tq3g62s" path="res://Sprites/game/arrow_button/black/up/arrow_black_up3.png" id="8_23t3j"]
+[ext_resource type="PackedScene" uid="uid://mw23ojbpmf5n" path="res://Prefabs/click.tscn" id="9_1by5w"]
 [ext_resource type="Texture2D" uid="uid://c8jfa8c1ax2vk" path="res://Sprites/game/arrow_button/black/right/arrow_black_right3.png" id="9_8ph6h"]
 [ext_resource type="Texture2D" uid="uid://bolb4x0pa1s21" path="res://Sprites/game/arrow_button/red/left/arrow_red_left3.png" id="10_5ti5v"]
+[ext_resource type="PackedScene" uid="uid://dcq4d60jxja07" path="res://Prefabs/hover.tscn" id="10_kmwmt"]
 [ext_resource type="Texture2D" uid="uid://cffdssjvf62uq" path="res://Sprites/game/arrow_button/red/up/arrow_red_up3.png" id="11_1by5w"]
 [ext_resource type="Texture2D" uid="uid://ce2sel4kdmfjg" path="res://Sprites/game/arrow_button/red/right/arrow_red_right3.png" id="12_kmwmt"]
 
@@ -156,6 +159,11 @@ theme_override_fonts/font = SubResource("SystemFont_1rerr")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
 text = "Back"
+script = ExtResource("8_8ph6h")
+
+[node name="Click" parent="songSettingsButtons/BackSettings" unique_id=40453516 instance=ExtResource("9_1by5w")]
+
+[node name="Hover" parent="songSettingsButtons/BackSettings" unique_id=1173788650 instance=ExtResource("10_kmwmt")]
 
 [node name="howToPlay" type="Panel" parent="." unique_id=991188824]
 visible = false
@@ -273,6 +281,13 @@ theme_override_fonts/font = SubResource("SystemFont_1rerr")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
 text = "Back"
+script = ExtResource("8_8ph6h")
+
+[node name="Click" parent="howToPlay/BackInstructions" unique_id=2025998290 instance=ExtResource("9_1by5w")]
+
+[node name="Hover" parent="howToPlay/BackInstructions" unique_id=1238506591 instance=ExtResource("10_kmwmt")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=289414529]
 
 [connection signal="pressed" from="basicButtons/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="basicButtons/VBoxContainer/HowToPlay" to="." method="_on_how_to_play_pressed"]
@@ -281,5 +296,9 @@ text = "Back"
 [connection signal="pressed" from="songSelectorButtons/VBoxContainer/songSelector" to="." method="_on_song_selector_pressed"]
 [connection signal="pressed" from="songSelectorButtons/VBoxContainer/songSelector2" to="." method="_on_song_selector_2_pressed"]
 [connection signal="value_changed" from="songSettingsButtons/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="mouse_entered" from="songSettingsButtons/BackSettings" to="songSettingsButtons/BackSettings" method="_on_mouse_entered"]
 [connection signal="pressed" from="songSettingsButtons/BackSettings" to="." method="_on_back_settings_pressed"]
+[connection signal="pressed" from="songSettingsButtons/BackSettings" to="songSettingsButtons/BackSettings" method="_on_pressed"]
+[connection signal="mouse_entered" from="howToPlay/BackInstructions" to="howToPlay/BackInstructions" method="_on_mouse_entered"]
 [connection signal="pressed" from="howToPlay/BackInstructions" to="." method="_on_back_instructions_pressed"]
+[connection signal="pressed" from="howToPlay/BackInstructions" to="howToPlay/BackInstructions" method="_on_pressed"]
